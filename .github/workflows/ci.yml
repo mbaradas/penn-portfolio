@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - order-lifecycle-analyzer
+          - fill-probability-model
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ${{ matrix.project }}/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pytest
+        # pytest exits 5 when it collects zero tests; treat that as a pass so
+        # the badge is green before the first test is written.
+        run: |
+          set +e
+          python -m pytest tests
+          rc=$?
+          if [ "$rc" -eq 5 ]; then
+            echo "No tests collected yet - passing."
+            exit 0
+          fi
+          exit "$rc"

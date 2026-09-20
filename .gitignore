@@ -1,0 +1,55 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+.coverage
+htmlcov/
+
+# ---- Java ----
+*.class
+target/
+build/
+.gradle/
+bin/
+out/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.log
+
+# ---- Editors / IDEs ----
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+*.swp
+*~
+
+# ---- OS / OneDrive ----
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+*.tmp
+*.lnk
+
+# ---- Data (large or regenerable; keep the folder, not the contents) ----
+data/*
+!data/.gitkeep
+**/data/*
+!**/data/.gitkeep
+
+# ---- Secrets ----
+.env
+.env.*
