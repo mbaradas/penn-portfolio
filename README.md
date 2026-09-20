@@ -1,6 +1,6 @@
 # penn-portfolio
 
-[![CI](https://github.com/GITHUB_USERNAME/penn-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/GITHUB_USERNAME/penn-portfolio/actions/workflows/ci.yml)
+[![CI](https://github.com/mbaradas/penn-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/mbaradas/penn-portfolio/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Two small, end-to-end projects built while completing Penn Engineering's Online Professional Learning sequence (Python, Java, statistics, machine learning, deep learning) in preparation for the MAS-CS Online program. I'm a product manager by trade; these are my proof that I can write, test, and reason about the code myself.
